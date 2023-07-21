@@ -91,7 +91,7 @@ class ItemEnterEventListener(EventListener):
     def on_event(self, event: ItemEnterEvent, extension: VsFolderExtension):
         arg = event.get_data()
         if isinstance(arg, OpenFolder):
-            subprocess.run(['code', f'{arg.folder}{os.sep}'])
+            subprocess.run(['code-insiders', f'{arg.folder}{os.sep}'])
             return HideWindowAction()
         return RenderResultListAction(
             build_list_of_folders(
